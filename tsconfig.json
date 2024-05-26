@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // ts 文件编译的 js 文件语法版本。 
+    "target": "es2021",
+    // TS3.7 之后新增属性, 编译后的类属性转换为Object.defineProperty 声明，对于没有赋值的类属性也会编译出来
+    "useDefineForClassFields": true,
+    "module": "esnext",
+     //  1 moduleResolution 模块解析
+    //  2 模块解析是 typescript 编译器用何种方式来确定导入所指内容。
+    //  moduleResolution："node" =>采用 node 模块解析的方式查找文件。[从内层到最高目录的外层查找 import 引入的文件]
+    // moduleResolution："classic" => 采用 classic 模块解析的方式查找文件。[从外层到内层方式查找 查找 import 引入的文件]
+    "moduleResolution": "node",
+    "allowJs": true,
+    "declaration": false,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true, 
+    "noEmit": true,
+    // export 接口或者type类型 会出现错误。 只能 export type 类型 这种方式导出
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "./vite.config.ts"
+  ],
+  "exclude": ["node_modules"]
+}
